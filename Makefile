@@ -1,7 +1,7 @@
 build:
-	@echo "=== BUILD ==="
-	python3 -m venv .venv || (echo "Échec création venv"; exit 1)
-	. .venv/bin/activate && pip install -r requirements.txt || (echo "Échec installation dépendances"; exit 1)
+    which python3 || (sudo apt update && sudo apt install -y python3 python3-venv)
+    python3 -m venv .venv
+    . .venv/bin/activate && pip install -r requirements.txt
 
 test:
 	@echo "=== TESTS ==="
